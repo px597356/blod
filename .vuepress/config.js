@@ -10,7 +10,6 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: '首页', link: '/', icon: 'reco-home' },
-      { text: '时间线', link: '/timeline/', icon: 'reco-date' },
       { text: '文档', 
         icon: 'reco-message',
         // link: '/docs/theme-reco/'
@@ -19,6 +18,7 @@ module.exports = {
           { text: 'webpack', link: '/docs/basis/' }
         ]
       },
+      { text: '时间线', link: '/timeline/', icon: 'reco-date' },
       // { text: 'Contact', 
       //   icon: 'reco-message',
       //   items: [
