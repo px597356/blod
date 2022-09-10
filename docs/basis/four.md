@@ -81,7 +81,7 @@ module: {
 
 ## 处理其他资源
 
-```
+```javascript
 module: {
         rules: [
             // loader的配置
