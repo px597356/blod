@@ -1,64 +1,74 @@
 module.exports = {
-  title: "vuepress-theme-reco",
-  description: 'A simple and beautiful vuepress blog theme .',
+  title: "狸猫的小港口",
+  description: '网上冲浪累了吧，来这里休息休息吧！',
   dest: 'public',
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['link', { rel: 'icon', href: '/favicon.svg' }],
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
   ],
   theme: 'reco',
   themeConfig: {
     nav: [
-      { text: 'Home', link: '/', icon: 'reco-home' },
-      { text: 'TimeLine', link: '/timeline/', icon: 'reco-date' },
-      { text: 'Docs', 
+      { text: '首页', link: '/', icon: 'reco-home' },
+      { text: '时间线', link: '/timeline/', icon: 'reco-date' },
+      { text: '文档', 
         icon: 'reco-message',
+        // link: '/docs/theme-reco/'
         items: [
-          { text: 'vuepress-reco', link: '/docs/theme-reco/' }
+          // { text: 'vuepress-reco', link: '/docs/theme-reco/' },
+          { text: 'webpack', link: '/docs/basis/' }
         ]
       },
-      { text: 'Contact', 
-        icon: 'reco-message',
-        items: [
-          { text: 'GitHub', link: 'https://github.com/recoluan', icon: 'reco-github' }
-        ]
-      }
+      // { text: 'Contact', 
+      //   icon: 'reco-message',
+      //   items: [
+      //     { text: 'GitHub', link: 'https://github.com/recoluan', icon: 'reco-github' }
+      //   ]
+      // }
     ],
     sidebar: {
-      '/docs/theme-reco/': [
+      // '/docs/theme-reco/': [
+      //   '',
+      //   'theme',
+      //   'plugin',
+      //   'api'
+      // ],
+      '/docs/basis/': [
         '',
-        'theme',
-        'plugin',
-        'api'
+        'one',
+        'two',
+        'three',
+        'four',
+        'five',
       ]
     },  
     type: 'blog',
     // 博客设置
-    blogConfig: {
-      category: {
-        location: 2, // 在导航栏菜单中所占的位置，默认2
-        text: 'Category' // 默认 “分类”
-      },
-      tag: {
-        location: 3, // 在导航栏菜单中所占的位置，默认3
-        text: 'Tag' // 默认 “标签”
-      }
-    },
-    friendLink: [
-      {
-        title: '午后南杂',
-        desc: 'Enjoy when you can, and endure when you must.',
-        email: '1156743527@qq.com',
-        link: 'https://www.recoluan.com'
-      },
-      {
-        title: 'vuepress-theme-reco',
-        desc: 'A simple and beautiful vuepress Blog & Doc theme.',
-        avatar: "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
-        link: 'https://vuepress-theme-reco.recoluan.com'
-      },
-    ],
-    logo: '/logo.png',
+    // blogConfig: {
+    //   category: {
+    //     location: 2, // 在导航栏菜单中所占的位置，默认2
+    //     text: 'Category' // 默认 “分类”
+    //   },
+    //   tag: {
+    //     location: 3, // 在导航栏菜单中所占的位置，默认3
+    //     text: 'Tag' // 默认 “标签”
+    //   }
+    // },
+    // friendLink: [
+    //   {
+    //     title: '午后南杂',
+    //     desc: 'Enjoy when you can, and endure when you must.',
+    //     email: '1156743527@qq.com',
+    //     link: 'https://www.recoluan.com'
+    //   },
+    //   {
+    //     title: 'vuepress-theme-reco',
+    //     desc: 'A simple and beautiful vuepress Blog & Doc theme.',
+    //     avatar: "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
+    //     link: 'https://vuepress-theme-reco.recoluan.com'
+    //   },
+    // ],
+    logo: '/icon.svg',
     // 搜索设置
     search: true,
     searchMaxSuggestions: 10,
@@ -67,13 +77,13 @@ module.exports = {
     // 最后更新时间
     lastUpdated: 'Last Updated',
     // 作者
-    author: 'reco_luan',
+    author: '狸猫',
     // 作者头像
-    authorAvatar: '/avatar.png',
+    authorAvatar: '/avatar.jpg',
     // 备案号
-    record: 'xxxx',
+    // record: 'xxxx',
     // 项目开始时间
-    startYear: '2017'
+    startYear: '2028'
     /**
      * 密钥 (if your blog is private)
      */

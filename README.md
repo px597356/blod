@@ -1,7 +1,7 @@
 ---
 home: true
-heroText: vuepress-theme-reco
-tagline: A simple and beautiful vuepress blog theme.
+heroText: 狸猫的小港口
+tagline: 网上冲浪累了吧，来这里休息休息吧！
 # heroImage: /hero.png
 # heroImageStyle: {
 #   maxWidth: '600px',
@@ -16,7 +16,7 @@ bgImageStyle: {
 }
 isShowTitleInHome: false
 actionText: Guide
-actionLink: /views/other/guide
+actionLink: /views/guide
 features:
 - title: Yesterday
   details: 开发一款看着开心、写着顺手的 vuepress 博客主题
