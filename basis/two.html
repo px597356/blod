@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>webpack笔记2</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.9825735b.css" as="style"><link rel="preload" href="/assets/js/app.58534d8d.js" as="script"><link rel="preload" href="/assets/js/2.15dd7717.js" as="script"><link rel="preload" href="/assets/js/12.d14dc880.js" as="script"><link rel="prefetch" href="/assets/js/10.ef9a31be.js"><link rel="prefetch" href="/assets/js/11.efba4ca7.js"><link rel="prefetch" href="/assets/js/13.e59c70b4.js"><link rel="prefetch" href="/assets/js/14.9f4ba726.js"><link rel="prefetch" href="/assets/js/15.7fa3cd3e.js"><link rel="prefetch" href="/assets/js/16.31e989de.js"><link rel="prefetch" href="/assets/js/3.5c5b3b7a.js"><link rel="prefetch" href="/assets/js/4.66b1b7b2.js"><link rel="prefetch" href="/assets/js/5.1abcf848.js"><link rel="prefetch" href="/assets/js/6.aa7f9648.js"><link rel="prefetch" href="/assets/js/7.8b7f692e.js"><link rel="prefetch" href="/assets/js/8.aa0f20ce.js"><link rel="prefetch" href="/assets/js/9.931033a8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.9825735b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="webpack第二节"><a href="#webpack第二节" class="header-anchor">#</a> webpack第二节</h1> <h2 id="基本配置"><a href="#基本配置" class="header-anchor">#</a> 基本配置</h2> <p>在开始使用 <code>Webpack</code> 之前，我们需要对 <code>Webpack</code> 的配置有一定的认识。</p> <h2 id="_5-大核心概念"><a href="#_5-大核心概念" class="header-anchor">#</a> 5 大核心概念</h2> <p>1.entry（入口）</p> <p>指示 <code>Webpack</code> 从哪个文件开始打包</p> <p>2.output（输出）</p> <p>指示 <code>Webpack</code> 打包完的文件输出到哪里去，如何命名等</p> <p>3.loader（加载器）</p> <p><code>Webpack</code> 本身只能处理 <code>js</code>、<code>json</code> 等资源，其他资源（样式、图片等）需要借助 <code>loader</code>，<code>Webpack</code> 才能解析</p> <p>4.plugins（插件）</p> <p>扩展 <code>Webpack</code> 的功能</p> <p>5.mode（模式）</p> <p>主要由两种模式：</p> <ul><li><p>开发模式：development</p></li> <li><p>生产模式：production</p></li></ul> <h2 id="准备-webpack-配置文件"><a href="#准备-webpack-配置文件" class="header-anchor">#</a> 准备 <code>Webpack</code> 配置文件</h2> <p>在项目根目录下新建文件：<code>webpack.config.js</code></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span> <span class="token comment">// nodejs 核心模块,专门用来处理路径问题</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 入口</span>
+    <span class="token literal-property property">entry</span><span class="token operator">:</span> <span class="token string">'./src/main.js'</span><span class="token punctuation">,</span> <span class="token comment">// 相对路径</span>
+    <span class="token comment">// 输出</span>
+    <span class="token literal-property property">output</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 文件的输出路径</span>
+        <span class="token comment">// __dirname是nodejs的变量，代表当前文件的文件夹目录</span>
+        <span class="token literal-property property">path</span><span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// 绝对路径</span>
+        <span class="token comment">// 文件名</span>
+        <span class="token literal-property property">filename</span><span class="token operator">:</span> <span class="token string">'main.js'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// 加载器</span>
+    <span class="token literal-property property">module</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token comment">// 数组复数，对象是单数，例如module:{}，rules:[]，plugins:[]</span>
+        <span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token comment">// loader的配置</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// 插件</span>
+    <span class="token literal-property property">plugins</span><span class="token operator">:</span><span class="token punctuation">[</span>
+        <span class="token comment">// plugins的配置</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token comment">// 模式</span>
+    <span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token string">'development'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Webpack 是基于 Node.js 运行的，所以采用 Common.js 模块化规范</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.58534d8d.js" defer></script><script src="/assets/js/2.15dd7717.js" defer></script><script src="/assets/js/12.d14dc880.js" defer></script>
+  </body>
+</html>
